@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma de apoio para estudantes universitários da Afya Montes Claros que desejam parar de fumar e usar vape.">
+  <meta name="theme-color" content="#2a7d4f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Livre do Cigarro">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Livre do Cigarro — Afya Montes Claros">
+  <meta property="og:description" content="Ferramentas práticas e informação de qualidade para quem quer se libertar do cigarro e do vape.">
+  <meta property="og:type" content="website">
+
+  <title>Livre do Cigarro — Afya Montes Claros</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVEGAÇÃO
+     ============================================================ -->
+<nav id="nav" role="navigation" aria-label="Menu principal">
+  <div class="container nav-inner">
+    <a href="#inicio" class="nav-brand" aria-label="Início">
+      <img src="icons/icon.svg" alt="" class="nav-logo" width="34" height="34">
+      <span>Livre do Cigarro</span>
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#parar">Por que parar</a></li>
+      <li><a href="#ferramentas">Ferramentas</a></li>
+      <li><a href="#recursos">Apoio</a></li>
+      <li><a href="#projeto">Projeto</a></li>
+      <li>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/escuro">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="inicio" class="hero" aria-label="Apresentação">
+  <div class="hero-particles" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Projeto de Extensão · Afya Montes Claros</span>
+    <h1 class="hero-title">
+      Sua respiração é<br>
+      <span class="line-accent">sua maior conquista.</span>
+    </h1>
+    <p class="hero-sub">
+      Para estudantes que querem se libertar do cigarro e do vape —
+      sem discurso, sem julgamento, com ferramentas de verdade.
+    </p>
+    <div class="hero-cta">
+      <a href="#ferramentas" class="btn btn-primary">Começar agora</a>
+      <a href="#sobre" class="btn btn-outline">Saber mais</a>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Role para saber mais</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     NÚMEROS / IMPACTO
+     ============================================================ -->
+<section class="stats-section" aria-label="Dados sobre tabagismo">
+  <div class="container">
+    <div class="stats-grid">
+
+      <div class="stat-card reveal">
+        <div>
+          <span class="stat-number" data-target="52">0</span><span class="stat-unit">%</span>
+        </div>
+        <p>dos universitários relatam fumar para lidar com o estresse</p>
+      </div>
+
+      <div class="stat-card reveal reveal-delay-1">
+        <div>
+          <span style="font-size:1.4rem;font-weight:700;color:var(--primary-light)">R$&nbsp;</span><span class="stat-number" data-target="5400">0</span>
+        </div>
+        <p>gasto por ano por quem fuma 1 maço por dia</p>
+      </div>
+
+      <div class="stat-card reveal reveal-delay-2">
+        <div>
+          <span class="stat-number" data-target="14">0</span><span class="stat-unit">x</span>
+        </div>
+        <p>maior é o risco de câncer de pulmão em fumantes</p>
+      </div>
+
+      <div class="stat-card reveal reveal-delay-3">
+        <div>
+          <span class="stat-number" data-target="70">0</span><span class="stat-unit">%</span>
+        </div>
+        <p>dos fumantes querem parar, mas não sabem por onde começar</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SOBRE O PROJETO
+     ============================================================ -->
+<section id="sobre" class="section" aria-labelledby="sobre-titulo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Contexto</span>
+      <h2 id="sobre-titulo">Por que criamos isso</h2>
+      <p>Uma iniciativa de estudantes da Afya que entendem a pressão da vida universitária — e que sabem que informação sozinha não é suficiente.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          Na universidade, o estresse das provas, os plantões e a convivência social criam um terreno
+          fértil para o cigarro. Muita gente começa achando que é só temporário — e acaba presa
+          no vício por anos sem nem perceber como chegou lá.
+        </p>
+        <p>
+          O vape chegou como uma suposta alternativa "mais saudável", mas a nicotina continua fazendo
+          seus estragos. Os riscos a longo prazo do cigarro eletrônico ainda são pouco conhecidos,
+          o que torna a situação ainda mais preocupante entre os jovens.
+        </p>
+        <p>
+          Esse projeto nasceu como parte da disciplina de Extensão da Afya, com o objetivo de oferecer
+          informação de qualidade, ferramentas práticas e apoio real para quem quer se libertar —
+          no próprio ritmo, sem culpa.
+        </p>
+        <a href="#projeto" class="btn btn-ghost">Ver mais sobre o projeto →</a>
+      </div>
+
+      <div class="about-cards">
+        <div class="info-card reveal reveal-delay-1">
+          <span class="info-card-icon">🎓</span>
+          <div>
+            <h3>Feito por estudantes</h3>
+            <p>Desenvolvido por e para estudantes da Afya Montes Claros, que conhecem a realidade da vida acadêmica por dentro.</p>
+          </div>
+        </div>
+        <div class="info-card reveal reveal-delay-2">
+          <span class="info-card-icon">🔬</span>
+          <div>
+            <h3>Base científica</h3>
+            <p>Todas as informações são baseadas em dados da OMS, do INCA e em estudos revisados por pares.</p>
+          </div>
+        </div>
+        <div class="info-card reveal reveal-delay-3">
+          <span class="info-card-icon">🤝</span>
+          <div>
+            <h3>Sem julgamento</h3>
+            <p>Aqui não tem discurso moralista. Só ferramentas práticas para quem quer mudar quando se sentir pronto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     POR QUE PARAR
+     ============================================================ -->
+<section id="parar" class="section section-dark" aria-labelledby="parar-titulo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Motivação</span>
+      <h2 id="parar-titulo">Por que vale a pena parar</h2>
+    </div>
+
+    <div class="tabs-wrapper">
+      <div class="tabs" role="tablist" aria-label="Categorias de motivação">
+        <button class="tab active" data-tab="saude"      role="tab" aria-selected="true"  aria-controls="tab-saude">Saúde</button>
+        <button class="tab"        data-tab="vape"       role="tab" aria-selected="false" aria-controls="tab-vape">Sobre o Vape</button>
+        <button class="tab"        data-tab="financeiro" role="tab" aria-selected="false" aria-controls="tab-financeiro">Financeiro</button>
+        <button class="tab"        data-tab="bemestar"   role="tab" aria-selected="false" aria-controls="tab-bemestar">Bem-estar</button>
+      </div>
+
+      <!-- TAB: Saúde -->
+      <div class="tab-content active" id="tab-saude" role="tabpanel">
+        <div class="tab-grid">
+          <div class="fact-card danger">
+            <div class="fact-icon">🫁</div>
+            <h3>Câncer de Pulmão</h3>
+            <p>90% dos casos de câncer de pulmão têm relação com o tabagismo. É o tipo de câncer mais mortal no Brasil — e o mais evitável.</p>
+          </div>
+          <div class="fact-card warning">
+            <div class="fact-icon">❤️</div>
+            <h3>Doenças Cardíacas</h3>
+            <p>Fumantes têm 2 a 4 vezes mais risco de desenvolver doenças cardíacas. O infarto não avisa, mas o cigarro anuncia.</p>
+          </div>
+          <div class="fact-card warning">
+            <div class="fact-icon">🧠</div>
+            <h3>AVC</h3>
+            <p>O risco de acidente vascular cerebral é 50% maior em fumantes. A boa notícia: ele cai rapidamente após parar.</p>
+          </div>
+          <div class="fact-card info">
+            <div class="fact-icon">👶</div>
+            <h3>Fertilidade</h3>
+            <p>O cigarro reduz a fertilidade tanto em homens quanto em mulheres e aumenta o risco de complicações na gravidez.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Vape -->
+      <div class="tab-content" id="tab-vape" role="tabpanel">
+        <div class="tab-grid">
+          <div class="myth-card">
+            <span class="myth-label">MITO</span>
+            <h3>"Vape não faz mal"</h3>
+            <p>Os líquidos contêm nicotina, solventes e substâncias químicas cuja inalação a longo prazo ainda é desconhecida — e isso por si só já é preocupante.</p>
+          </div>
+          <div class="myth-card">
+            <span class="myth-label">MITO</span>
+            <h3>"É só vapor d'água"</h3>
+            <p>Não é. É um aerossol com partículas ultrafinas que penetram fundo nos pulmões, carregando metais pesados e substâncias tóxicas.</p>
+          </div>
+          <div class="myth-card truth">
+            <span class="myth-label truth-label">VERDADE</span>
+            <h3>A nicotina é a mesma</h3>
+            <p>A nicotina do vape é idêntica à do cigarro. O vício se forma da mesma forma, e o processo de parar exige o mesmo esforço.</p>
+          </div>
+          <div class="myth-card truth">
+            <span class="myth-label truth-label">VERDADE</span>
+            <h3>Jovens são os mais afetados</h3>
+            <p>O vape é especialmente atraente para quem nunca fumou cigarro. Muitos acabam desenvolvendo dependência de nicotina por esse caminho.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Financeiro -->
+      <div class="tab-content" id="tab-financeiro" role="tabpanel">
+        <div class="financial-calc">
+          <div class="fin-inputs">
+            <label>
+              Cigarros por dia
+              <input type="number" id="fin-cig" value="10" min="1" max="80" aria-label="Número de cigarros por dia">
+            </label>
+            <label>
+              Preço do maço (R$)
+              <input type="number" id="fin-price" value="15" min="5" step="0.5" aria-label="Preço do maço em reais">
+            </label>
+          </div>
+          <div class="fin-results">
+            <div class="fin-result">
+              <span class="fin-value" id="fin-daily">R$ 7,50</span>
+              <span class="fin-label">por dia</span>
+            </div>
+            <div class="fin-result">
+              <span class="fin-value" id="fin-monthly">R$ 225,00</span>
+              <span class="fin-label">por mês</span>
+            </div>
+            <div class="fin-result highlight">
+              <span class="fin-value" id="fin-yearly">R$ 2.737,50</span>
+              <span class="fin-label">por ano</span>
+            </div>
+            <div class="fin-result">
+              <span class="fin-value" id="fin-5years">R$ 13.687,50</span>
+              <span class="fin-label">em 5 anos</span>
+            </div>
+          </div>
+          <p class="fin-hint">
+            💡 Com o dinheiro de 1 ano você poderia comprar um notebook novo, pagar vários meses de academia ou fazer uma viagem.
+          </p>
+        </div>
+      </div>
+
+      <!-- TAB: Bem-estar -->
+      <div class="tab-content" id="tab-bemestar" role="tabpanel">
+        <div class="tab-grid">
+          <div class="wellbeing-card">
+            <div class="we-icon">😴</div>
+            <h3>Qualidade do sono</h3>
+            <p>A nicotina é um estimulante. Parar de fumar melhora significativamente a qualidade do sono nas primeiras semanas.</p>
+          </div>
+          <div class="wellbeing-card">
+            <div class="we-icon">😌</div>
+            <h3>Saúde mental</h3>
+            <p>Ao contrário do que parece, ex-fumantes têm níveis mais baixos de ansiedade e estresse após o período inicial de abstinência.</p>
+          </div>
+          <div class="wellbeing-card">
+            <div class="we-icon">🏃</div>
+            <h3>Desempenho físico</h3>
+            <p>Com pulmões melhores, praticar esportes fica muito mais prazeroso. Fôlego, resistência e recuperação melhoram rapidamente.</p>
+          </div>
+          <div class="wellbeing-card">
+            <div class="we-icon">💪</div>
+            <h3>Autoconfiança</h3>
+            <p>Superar um vício fortalece a autoconfiança. É uma conquista que vai muito além da saúde física — você prova para si mesmo que consegue.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FERRAMENTAS
+     ============================================================ -->
+<section id="ferramentas" class="section" aria-labelledby="ferramentas-titulo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Ferramentas</span>
+      <h2 id="ferramentas-titulo">Seu painel de apoio</h2>
+      <p>Três ferramentas para acompanhar seu progresso, visualizar sua recuperação e manter o foco dia a dia.</p>
+    </div>
+
+    <div class="tools-tabs" role="tablist" aria-label="Ferramentas disponíveis">
+      <button class="tool-tab active" data-tool="contador" role="tab" aria-selected="true"  aria-controls="tool-contador">⏱️ Contador</button>
+      <button class="tool-tab"        data-tool="saude"    role="tab" aria-selected="false" aria-controls="tool-saude">📈 Recuperação</button>
+      <button class="tool-tab"        data-tool="desafios" role="tab" aria-selected="false" aria-controls="tool-desafios">🎯 Desafios</button>
+    </div>
+
+    <!-- ---- CONTADOR ---- -->
+    <div class="tool-panel active" id="tool-contador" role="tabpanel">
+
+      <!-- Formulário de configuração -->
+      <div id="counter-setup-wrapper">
+        <div class="setup-card reveal">
+          <h3>Configure seu contador</h3>
+          <p>Informe quando você parou (ou vai parar) de fumar para iniciar o monitoramento.</p>
+          <form id="counter-setup" novalidate>
+            <div class="form-group">
+              <label for="quit-date">Data e hora que você parou</label>
+              <input type="datetime-local" id="quit-date" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cigarettes-per-day">Cigarros por dia</label>
+                <input type="number" id="cigarettes-per-day" value="10" min="1" max="100">
+              </div>
+              <div class="form-group">
+                <label for="price-per-pack">Preço do maço (R$)</label>
+                <input type="number" id="price-per-pack" value="15" min="1" step="0.50">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Iniciar contador →</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Display do contador -->
+      <div id="counter-display" class="hidden">
+        <div class="counter-display-card reveal">
+          <div class="counter-header">
+            <h3>Tempo sem fumar</h3>
+            <div class="time-display" aria-live="polite" aria-atomic="true">
+              <div class="time-unit">
+                <span class="time-value" id="count-days">0</span>
+                <span class="time-label">dias</span>
+              </div>
+              <span class="time-sep" aria-hidden="true">:</span>
+              <div class="time-unit">
+                <span class="time-value" id="count-hours">00</span>
+                <span class="time-label">horas</span>
+              </div>
+              <span class="time-sep" aria-hidden="true">:</span>
+              <div class="time-unit">
+                <span class="time-value" id="count-minutes">00</span>
+                <span class="time-label">min</span>
+              </div>
+              <span class="time-sep" aria-hidden="true">:</span>
+              <div class="time-unit">
+                <span class="time-value" id="count-seconds">00</span>
+                <span class="time-label">seg</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="counter-stats">
+            <div class="cstat">
+              <span class="cstat-value" id="count-cigarettes">0</span>
+              <span class="cstat-label">cigarros não fumados</span>
+            </div>
+            <div class="cstat">
+              <span class="cstat-value" id="count-money">R$ 0,00</span>
+              <span class="cstat-label">economizados</span>
+            </div>
+          </div>
+
+          <div class="stage-card">
+            <div class="stage-info">
+              <span class="stage-badge">✅ Marco atingido</span>
+              <h4 id="stage-label">—</h4>
+              <p id="stage-desc">—</p>
+            </div>
+            <div class="stage-next">
+              <span class="stage-next-label">Próximo marco:</span>
+              <p id="stage-next">—</p>
+            </div>
+          </div>
+
+          <div class="counter-footer">
+            <button id="counter-reset" class="btn btn-ghost btn-sm">Redefinir contador</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ---- RECUPERAÇÃO ---- -->
+    <div class="tool-panel" id="tool-saude" role="tabpanel">
+      <div id="health-timeline">
+        <!-- Renderizado por calculator.js -->
+      </div>
+    </div>
+
+    <!-- ---- DESAFIOS ---- -->
+    <div class="tool-panel" id="tool-desafios" role="tabpanel">
+      <!-- Renderizado por challenges.js -->
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     RECURSOS DE APOIO
+     ============================================================ -->
+<section id="recursos" class="section section-tinted" aria-labelledby="recursos-titulo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Apoio</span>
+      <h2 id="recursos-titulo">Você não precisa fazer isso sozinho</h2>
+      <p>Recursos disponíveis de graça em Montes Claros e em todo o Brasil. Pedir ajuda é parte do processo.</p>
+    </div>
+
+    <div class="resources-grid">
+
+      <div class="resource-card local reveal">
+        <span class="resource-badge">Montes Claros</span>
+        <h3>CAPS-AD</h3>
+        <p>Centro de Atenção Psicossocial Álcool e Drogas. Atendimento completamente gratuito pelo SUS com equipe multidisciplinar especializada.</p>
+        <span class="resource-link">Procure pelo CAPS-AD da sua regional no CRAS mais próximo</span>
+      </div>
+
+      <div class="resource-card local reveal reveal-delay-1">
+        <span class="resource-badge">Montes Claros</span>
+        <h3>UBS da sua região</h3>
+        <p>Qualquer Unidade Básica de Saúde oferece o Programa Nacional de Controle do Tabagismo, com grupos de apoio e medicamentos gratuitos.</p>
+        <a href="https://www.montesclaros.mg.gov.br/saude" class="resource-link" target="_blank" rel="noopener noreferrer">Ver UBS do município →</a>
+      </div>
+
+      <div class="resource-card national reveal reveal-delay-2">
+        <span class="resource-badge">Nacional · Gratuito</span>
+        <h3>INCA — Disque Saúde</h3>
+        <p>Instituto Nacional de Câncer. Ligue <strong>136</strong> para informações e para ser direcionado ao programa de cessação tabágica mais próximo.</p>
+        <a href="https://www.inca.gov.br/tabagismo" class="resource-link" target="_blank" rel="noopener noreferrer">Acessar site do INCA →</a>
+      </div>
+
+      <div class="resource-card national reveal reveal-delay-3">
+        <span class="resource-badge">Nacional · 24h</span>
+        <h3>CVV — Ligue 188</h3>
+        <p>Centro de Valorização da Vida. Apoio emocional gratuito 24 horas por dia, 7 dias por semana — inclusive por chat.</p>
+        <a href="https://www.cvv.org.br" class="resource-link" target="_blank" rel="noopener noreferrer">Chat online →</a>
+      </div>
+
+      <div class="resource-card app reveal">
+        <span class="resource-badge">App gratuito</span>
+        <h3>QuitNow!</h3>
+        <p>App de acompanhamento de cessação tabágica com comunidade ativa, contador de tempo e estatísticas de saúde. Android e iOS.</p>
+      </div>
+
+      <div class="resource-card app reveal reveal-delay-1">
+        <span class="resource-badge">App gratuito</span>
+        <h3>Smoke Free</h3>
+        <p>Um dos apps mais bem avaliados para parar de fumar. Tracking diário, missões, dados de saúde e modo offline.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SOBRE O PROJETO
+     ============================================================ -->
+<section id="projeto" class="section" aria-labelledby="projeto-titulo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Projeto de Extensão</span>
+      <h2 id="projeto-titulo">Afya Montes Claros</h2>
+      <p>Este site foi desenvolvido como projeto de extensão universitária da Afya Faculdade de Ciências Médicas de Montes Claros.</p>
+    </div>
+
+    <div class="project-grid">
+      <div class="project-objectives reveal">
+        <h3>Objetivos do projeto</h3>
+        <ul class="objectives-list">
+          <li>Verbalizar preocupações e experiências de estudantes relacionadas ao tabagismo e ao vape</li>
+          <li>Identificar motivações, dificuldades e obstáculos para parar de fumar entre universitários</li>
+          <li>Oferecer estratégias e recursos de apoio fundamentados em evidências científicas</li>
+          <li>Engajar a comunidade acadêmica em ações concretas de promoção da saúde</li>
+          <li>Construir um canal de apoio acessível, sem barreiras e sem julgamento</li>
+        </ul>
+      </div>
+
+      <div class="project-context reveal reveal-delay-1">
+        <h3>Contexto</h3>
+        <p>
+          O tabagismo entre jovens universitários une questões de saúde pública, bem-estar mental
+          e qualidade de vida. Estudantes de saúde — como os da Afya — vivem uma tensão particular:
+          conhecem os riscos em teoria, mas também são humanos sujeitos às mesmas pressões de
+          qualquer universitário.
+        </p>
+        <p>
+          Esse projeto busca construir uma ponte entre o conhecimento técnico e a experiência real
+          dos estudantes. A ideia não é pregar para o convertido, mas oferecer suporte genuíno para
+          quem já decidiu que quer mudar — ou para quem ainda está considerando.
+        </p>
+        <p>
+          As principais perguntas que guiaram o projeto: Quais dificuldades as pessoas enfrentam
+          para parar? Que recursos e estratégias realmente ajudam? Como criar ferramentas que
+          as pessoas queiram usar de verdade?
+        </p>
+      </div>
+    </div>
+
+    <div class="disciplines-row reveal">
+      <span class="discipline-tag">Projeto de Extensão</span>
+      <span class="discipline-tag">Saúde Coletiva</span>
+      <span class="discipline-tag">Promoção à Saúde</span>
+      <span class="discipline-tag">Medicina Preventiva</span>
+      <span class="discipline-tag">Afya 2025</span>
+      <span class="discipline-tag">Montes Claros — MG</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     RODAPÉ
+     ============================================================ -->
+<footer aria-label="Rodapé">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <img src="icons/icon.svg" alt="" class="footer-logo" width="30" height="30">
+          <span>Livre do Cigarro</span>
+        </div>
+        <p>Afya Montes Claros · Projeto de Extensão 2025.<br>Informação, ferramentas e apoio para quem quer se libertar.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Links rápidos">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#parar">Por que parar</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#recursos">Apoio</a>
+        <a href="#projeto">Projeto</a>
+      </nav>
+
+      <div class="footer-note">
+        <p>
+          As informações têm caráter educativo e não substituem consulta médica profissional.
+          Em caso de dependência grave, procure uma Unidade Básica de Saúde ou o CAPS-AD da sua região.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Afya Faculdade de Ciências Médicas de Montes Claros · Projeto de Extensão 2025</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     BANNER PWA
+     ============================================================ -->
+<div id="pwa-install" class="pwa-banner hidden" role="alert" aria-live="polite">
+  <p>📱 Instale o app no seu celular para acessar offline</p>
+  <button id="pwa-install-btn" class="btn btn-primary btn-sm">Instalar</button>
+  <button id="pwa-dismiss" class="pwa-dismiss" aria-label="Fechar">✕</button>
+</div>
+
+
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/counter.js"></script>
+<script type="module" src="js/calculator.js"></script>
+<script type="module" src="js/challenges.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\icons\")",
+      "Bash(Out-Null)",
+      "Bash(New-Item -ItemType Directory -Force \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\css\")",
+      "Bash(New-Item -ItemType Directory -Force \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\js\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\icons\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\css\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\js\")",
+      "PowerShell(Get-ChildItem -Recurse \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\" | Where-Object { -not $_.PSIsContainer } | Select-Object FullName, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)",
+      "PowerShell(New-Item -ItemType Directory -Force \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\public\\\\icons\")",
+      "PowerShell(Copy-Item \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\icons\\\\icon.svg\"          \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\public\\\\icons\\\\icon.svg\")",
+      "PowerShell(Copy-Item \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\icons\\\\icon-maskable.svg\" \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\public\\\\icons\\\\icon-maskable.svg\")",
+      "PowerShell(Copy-Item \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\manifest.json\"           \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\public\\\\manifest.json\")",
+      "PowerShell(Get-ChildItem -Recurse \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\" | Select-Object @{N='Arquivo';E={$_.FullName.Replace\\('D:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\\\\',''\\)}} | Format-Table -AutoSize)"
+    ]
+  }
+}

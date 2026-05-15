@@ -1,0 +1,14 @@
+{
+  "name": "livre-do-cigarro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plataforma PWA de apoio para quem quer parar de fumar — Afya Montes Claros",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.2"
+  }
+}
