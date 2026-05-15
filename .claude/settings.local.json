@@ -13,7 +13,10 @@
       "PowerShell(Copy-Item \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\icons\\\\icon.svg\"          \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\public\\\\icons\\\\icon.svg\")",
       "PowerShell(Copy-Item \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\icons\\\\icon-maskable.svg\" \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\public\\\\icons\\\\icon-maskable.svg\")",
       "PowerShell(Copy-Item \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\manifest.json\"           \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\public\\\\manifest.json\")",
-      "PowerShell(Get-ChildItem -Recurse \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\" | Select-Object @{N='Arquivo';E={$_.FullName.Replace\\('D:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\\\\',''\\)}} | Format-Table -AutoSize)"
+      "PowerShell(Get-ChildItem -Recurse \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\" | Select-Object @{N='Arquivo';E={$_.FullName.Replace\\('D:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\\\\',''\\)}} | Format-Table -AutoSize)",
+      "PowerShell(New-Item -ItemType Directory -Force \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\scripts\")",
+      "PowerShell(Get-ChildItem \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\\\\icons\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}})",
+      "PowerShell(Get-ChildItem -Recurse \"d:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\" | Where-Object { -not $_.PSIsContainer } | Select-Object @{N='Arquivo';E={$_.FullName.Replace\\('D:\\\\TESTES DE CONTROLE\\\\TABAGISMO\\\\dist\\\\',''\\)}}, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)"
     ]
   }
 }

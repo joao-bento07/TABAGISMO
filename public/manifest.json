@@ -2,8 +2,8 @@
   "name": "Livre do Cigarro — Afya Montes Claros",
   "short_name": "Livre do Cigarro",
   "description": "Plataforma de apoio para estudantes universitários que desejam parar de fumar e usar vape.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#0e1c15",
@@ -12,16 +12,22 @@
   "categories": ["health", "lifestyle", "education"],
   "icons": [
     {
-      "src": "icons/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon-maskable.svg",
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "maskable"
+      "purpose": "any"
     }
   ],
   "shortcuts": [
@@ -29,15 +35,15 @@
       "name": "Meu Progresso",
       "short_name": "Progresso",
       "description": "Ver contador de tempo sem fumar",
-      "url": "./#ferramentas",
-      "icons": [{ "src": "icons/icon.svg", "sizes": "any" }]
+      "url": "/#ferramentas",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Desafio de Hoje",
       "short_name": "Desafio",
       "description": "Ver o desafio diário",
-      "url": "./#ferramentas",
-      "icons": [{ "src": "icons/icon.svg", "sizes": "any" }]
+      "url": "/#ferramentas",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]
 }
