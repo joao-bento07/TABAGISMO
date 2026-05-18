@@ -146,6 +146,7 @@ function bindModal() {
       await updateProfile(user, { displayName: name });
       closeModal();
     } catch (err) {
+      console.error('[Auth] Erro ao criar conta:', err.code, err.message);
       showError('auth-reg-error', friendlyError(err.code));
     }
   });
@@ -156,15 +157,19 @@ function bindModal() {
 
 function friendlyError(code) {
   const map = {
-    'auth/user-not-found':       'E-mail não encontrado. Verifique ou crie uma conta.',
-    'auth/wrong-password':       'Senha incorreta. Tente novamente.',
-    'auth/email-already-in-use': 'Esse e-mail já está em uso.',
-    'auth/invalid-email':        'E-mail inválido.',
-    'auth/weak-password':        'A senha precisa ter pelo menos 6 caracteres.',
-    'auth/too-many-requests':    'Muitas tentativas. Aguarde alguns minutos e tente novamente.',
-    'auth/invalid-credential':   'E-mail ou senha incorretos.',
+    'auth/user-not-found':          'E-mail não encontrado. Verifique ou crie uma conta.',
+    'auth/wrong-password':          'Senha incorreta. Tente novamente.',
+    'auth/email-already-in-use':    'Esse e-mail já está em uso.',
+    'auth/invalid-email':           'E-mail inválido.',
+    'auth/weak-password':           'A senha precisa ter pelo menos 6 caracteres.',
+    'auth/too-many-requests':       'Muitas tentativas. Aguarde alguns minutos e tente novamente.',
+    'auth/invalid-credential':      'E-mail ou senha incorretos.',
+    'auth/unauthorized-domain':     'Domínio não autorizado no Firebase. Adicione este domínio em Authentication → Settings → Authorized domains.',
+    'auth/operation-not-allowed':   'Login por e-mail não está ativado. Ative em Authentication → Sign-in method.',
+    'auth/network-request-failed':  'Erro de rede. Verifique sua conexão e tente novamente.',
+    'auth/internal-error':          'Erro interno do Firebase. Tente novamente em alguns instantes.',
   };
-  return map[code] || 'Algo deu errado. Tente novamente.';
+  return map[code] || `Erro: ${code}. Tente novamente.`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
