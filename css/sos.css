@@ -1,0 +1,277 @@
+/* ============================================================
+   SOS — Botão flutuante + modal de respiração
+   ============================================================ */
+
+/* Floating Action Button */
+.sos-fab {
+  position: fixed;
+  bottom: 88px;
+  right: 20px;
+  z-index: 900;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e53935, #c62828);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 20px rgba(229, 57, 53, .45);
+  animation: sos-pulse 2.5s ease-in-out infinite;
+  transition: transform .2s, box-shadow .2s;
+}
+.sos-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(229, 57, 53, .6);
+  animation-play-state: paused;
+}
+.sos-fab:focus-visible {
+  outline: 3px solid #e53935;
+  outline-offset: 4px;
+}
+
+.sos-fab-label {
+  position: absolute;
+  right: 66px;
+  background: #c62828;
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(229, 57, 53, .3);
+}
+
+@keyframes sos-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(229, 57, 53, .45); }
+  50%       { box-shadow: 0 4px 28px rgba(229, 57, 53, .75), 0 0 0 10px rgba(229, 57, 53, .1); }
+}
+
+/* Overlay */
+.sos-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(0, 0, 0, .65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+.sos-overlay.hidden { display: none; }
+
+/* Modal */
+.sos-modal {
+  background: var(--card-bg, #fff);
+  border-radius: 24px;
+  padding: 2rem 1.75rem 1.75rem;
+  max-width: 440px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .25);
+  max-height: 92vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.sos-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text-muted, #888);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+.sos-close:hover { background: var(--bg-alt, #f0f0f0); }
+
+/* Header */
+.sos-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.sos-eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #e53935;
+  margin: 0 0 .3rem;
+}
+.sos-header h2 {
+  font-size: 1.35rem;
+  margin: 0 0 .35rem;
+  color: var(--text, #1a1a1a);
+}
+.sos-lead {
+  font-size: .88rem;
+  color: var(--text-muted, #666);
+  margin: 0;
+}
+
+/* Exercise tabs */
+.sos-tabs {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: .8rem;
+}
+.sos-tab {
+  border: 1.5px solid var(--border, #ddd);
+  background: transparent;
+  border-radius: 20px;
+  padding: .3rem .85rem;
+  font-size: .77rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted, #666);
+  font-family: inherit;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.sos-tab.active,
+.sos-tab:hover {
+  border-color: var(--primary, #2a7d4f);
+  color: var(--primary, #2a7d4f);
+  background: rgba(42, 125, 79, .07);
+}
+
+/* Exercise description */
+.sos-ex-desc {
+  font-size: .85rem;
+  color: var(--text-muted, #666);
+  text-align: center;
+  margin: 0 0 1rem;
+  min-height: 2.4rem;
+  line-height: 1.5;
+}
+
+/* Breathing circle wrapper */
+.sos-breath-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  width: 170px;
+  height: 170px;
+}
+
+/* Decorative rotating ring */
+.sos-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(42, 125, 79, .25);
+  animation: ring-spin 10s linear infinite;
+}
+@keyframes ring-spin { to { transform: rotate(360deg); } }
+
+/* The animated breathing circle */
+.sos-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #4caf8a, var(--primary, #2a7d4f));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform var(--step-dur, 4s) ease-in-out;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 24px rgba(42, 125, 79, .35);
+}
+
+.sos-circle.idle     { transform: scale(1); }
+.sos-circle.expand   { transform: scale(1.38); }
+.sos-circle.hold-big { transform: scale(1.38); }
+.sos-circle.contract { transform: scale(0.76); }
+.sos-circle.hold-sml { transform: scale(0.76); }
+.sos-circle.done     {
+  transform: scale(1.12);
+  background: radial-gradient(circle at 35% 35%, #81c784, #388e3c);
+}
+
+.sos-step-label {
+  font-size: .8rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0 .5rem;
+}
+.sos-countdown {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: .15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cycle info */
+.sos-cycle-info {
+  text-align: center;
+  font-size: .82rem;
+  color: var(--text-muted, #666);
+  margin: 0 0 1rem;
+  min-height: 1.2rem;
+}
+
+/* Action buttons */
+.sos-actions { margin-bottom: 1rem; }
+.sos-actions .hidden { display: none; }
+.btn-full { width: 100%; }
+
+/* Motivational quote */
+.sos-quote-box {
+  background: var(--bg-alt, #f6f6f6);
+  border-radius: 14px;
+  padding: .85rem 1rem .85rem 1.1rem;
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+}
+.sos-quote-box blockquote {
+  margin: 0;
+  font-size: .88rem;
+  font-style: italic;
+  color: var(--text-muted, #555);
+  flex: 1;
+  line-height: 1.55;
+}
+.sos-quote-next {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-muted, #888);
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+  transition: transform .3s;
+}
+.sos-quote-next:hover { transform: rotate(180deg); }
+
+/* Mobile */
+@media (max-width: 480px) {
+  .sos-modal { padding: 1.5rem 1.1rem 1.25rem; }
+  .sos-fab   { bottom: 76px; right: 14px; }
+  .sos-fab-label { display: none; }
+}

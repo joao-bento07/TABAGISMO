@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /posts/{postId} {
+      // Qualquer pessoa pode ler as publicações
+      allow read: if true;
+
+      // Somente usuários autenticados podem criar publicações
+      allow create: if request.auth != null
+        && request.resource.data.authorId == request.auth.uid
+        && request.resource.data.text is string
+        && request.resource.data.text.size() > 0
+        && request.resource.data.text.size() <= 500
+        && request.resource.data.likesCount == 0
+        && request.resource.data.likedBy is list
+        && request.resource.data.likedBy.size() == 0;
+
+      // Qualquer usuário autenticado pode atualizar apenas curtidas
+      allow update: if request.auth != null
+        && request.resource.data.diff(resource.data).affectedKeys()
+           .hasOnly(['likesCount', 'likedBy']);
+
+      // Somente o autor pode excluir sua publicação
+      allow delete: if request.auth != null
+        && resource.data.authorId == request.auth.uid;
+    }
+  }
+}

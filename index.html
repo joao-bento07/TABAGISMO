@@ -22,6 +22,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sos.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/community.css">
 </head>
 <body>
 
@@ -43,6 +46,7 @@
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#parar">Por que parar</a></li>
       <li><a href="#ferramentas">Ferramentas</a></li>
+      <li><a href="#comunidade">Comunidade</a></li>
       <li><a href="#recursos">Apoio</a></li>
       <li><a href="#projeto">Projeto</a></li>
       <li>
@@ -51,6 +55,13 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
+      </li>
+      <li>
+        <button class="nav-login-btn" id="nav-login-btn">Entrar</button>
+        <div class="nav-user hidden" id="nav-user">
+          <div class="nav-avatar" id="nav-initials" aria-label="Sua conta">??</div>
+          <button class="nav-signout" id="nav-signout" aria-label="Sair da conta">Sair</button>
+        </div>
       </li>
     </ul>
   </div>
@@ -500,6 +511,28 @@
 
 
 <!-- ============================================================
+     COMUNIDADE / FÓRUM
+     ============================================================ -->
+<section id="comunidade" class="section section-tinted" aria-labelledby="comunidade-titulo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Comunidade</span>
+      <h2 id="comunidade-titulo">Você não está sozinho nessa</h2>
+      <p>Compartilhe conquistas, peça ajuda e troque experiências com outras pessoas que estão no mesmo caminho.</p>
+    </div>
+
+    <div class="community-inner">
+      <div id="post-composer"></div>
+      <div id="filter-bar"></div>
+      <div id="posts-list">
+        <div class="posts-loading"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
      SOBRE O PROJETO
      ============================================================ -->
 <section id="projeto" class="section" aria-labelledby="projeto-titulo">
@@ -574,6 +607,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#parar">Por que parar</a>
         <a href="#ferramentas">Ferramentas</a>
+        <a href="#comunidade">Comunidade</a>
         <a href="#recursos">Apoio</a>
         <a href="#projeto">Projeto</a>
       </nav>
@@ -596,6 +630,13 @@
 <!-- ============================================================
      BANNER PWA
      ============================================================ -->
+<!-- Botão SOS flutuante -->
+<button class="sos-fab sos-trigger" aria-label="SOS — Exercício de respiração para conter a fissura">
+  🆘
+  <span class="sos-fab-label">SOS</span>
+</button>
+
+
 <div id="pwa-install" class="pwa-banner hidden" role="alert" aria-live="polite">
   <p>📱 Instale o app no seu celular para acessar offline</p>
   <button id="pwa-install-btn" class="btn btn-primary btn-sm">Instalar</button>
@@ -607,5 +648,8 @@
 <script type="module" src="js/counter.js"></script>
 <script type="module" src="js/calculator.js"></script>
 <script type="module" src="js/challenges.js"></script>
+<script type="module" src="js/sos.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/community.js"></script>
 </body>
 </html>
